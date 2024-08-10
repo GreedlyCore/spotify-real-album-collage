@@ -1,32 +1,34 @@
 # Spotify Album Collage
 
-![Image collage](collages/collage.jpeg)
+![Image collage](collages/start_collage.jpeg)
 
 ### Contents
 - collage.ipynb
-  - Jupyter Notebook that creates the college
+  - Jupyter Notebook that creates the collage
   - Saves files locally
-- collage-aws.ipynb
-  - Jupyter Notebook that creates the college
-  - Saves files in an AWS S3 bucket
+- collage.ipynb
+  - tryna add opportunity to setup the grid
+  - or make auto grid setup according by your album count
 
 ### About
-A program that creates an image collage from album covers from recently saved Spotify songs.
+A program that creates an image collage from album covers that you've saved before. Thanks that the author of original repo exists, because i spent some time on searching ready-to-use solutions and it was the best one - i only gave some changes in using Spotify-API, and ...
 
-I came up with this idea when I wanted an album collage as my desktop wallpaper and figured others might want to do the same. Kind of similar to when I had songs on iTunes (before I jumped on the Spotify train in 2012) and it would create a screen saver of all the albums.
+In the future i want to add some research elements to that program or matching close album covers in the picture by colour, and maybe add random on selecting covers (additional option)
 
-The first iteration took about under a day in real time because I wasn't familiar with the PIL library at all and, therefore, had to spend a lot of that time troubleshooting errors.
+
 
 ### Current Functionality
-- User can generate a basic collage in the notebook
+- User can generate a basic collage in the notebook(1/2 version)
 
 ### Instructions on Using Jupyter Notebook
-- Export the following environment variables:
+- Export the following environment variables (import os library):
   - SPOTIFY_CLIENT_ID
   - SPOTIFY_CLIENT_SECRET
   - SPOTIFY_REDIRECT_URI
-  - SPOTIFY_USERNAME
-  - If using AWS notebooks:
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
 - Run `jupyter notebook collage.ipynb` in command line
+
+### How to get access --- Spotify API
+1. Authorize in spotify for devs and go [here](https://developer.spotify.com/dashboard/create)
+2. Create an app - just enter random name, in that case only "redirect URIs" matters, [here's hint](https://developer.spotify.com/documentation/web-api/concepts/apps)
+3. eg, mine is "http://localhost:8888/callback", it will be a future redirect uri variable
+4. after creation go to the settings of the app - here you can get a client ID and client secret - those two variables like a key of API.
